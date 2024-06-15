@@ -46,7 +46,7 @@ export const Header = () => {
           <ul className="nav__list">
             {navItems.map((link) => {
               const isActive = pathname === link.href;
-              console.log(isActive);
+
               return (
                 <li className="nav-item" key={link.label}>
                   <Link

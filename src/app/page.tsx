@@ -15,7 +15,7 @@ export default function Home() {
       <div className="main__content">
         <h2 className="text-box-3d co-po-szkole">
           CO PO SZKOLE ?
-          <img className="co-po-szkole-img" src="photo/smile.png" alt="" />
+          <img className="co-po-szkole-img" alt="" />
         </h2>
         <article>
           <h3>Zapraszamy do</h3>
