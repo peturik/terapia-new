@@ -51,7 +51,7 @@ export const Header = () => {
                 <li className="nav-item" key={link.label}>
                   <Link
                     href={link.href}
-                    className={isActive ? `nav-link-hover` : `nav-link`}
+                    className={isActive ? `nav-link nav-link-hover` : `nav-link`}
                   >
                     {link.label}
                   </Link>
