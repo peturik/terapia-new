@@ -60,29 +60,24 @@ body {
   border: 1px solid transparent;
 }
 
-.nav-link-hover {
-  color: var(--main-color-3);
-  background-color: var(--main-color-2);
-  line-height: 30px;
-  padding: 5px 10px;
-  margin: 0 5px;
-  border-radius: 10%;
-  border: solid var(--main-color-1) 1px;
-}
-
+.nav-link-hover,
 .nav-link:hover {
   background-color: var(--main-color-2);
   border-radius: 10%;
   border: solid var(--main-color-1) 1px;
 }
 
-#nav--pracowni:target .nav__list {
+#pracowni .nav__list {
   flex-direction: column;
 }
 
-#nav--pracowni:target .nav-link {
+#pracowni .nav-link {
   padding: 25px;
   font-size: 36px;
+}
+
+#pracowni .main__left-side {
+  width: 300px;
 }
 
 .header__menu {

@@ -1,5 +1,7 @@
+"use client";
 import React, { ReactNode } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navItem = [
   { label: "Pracownia Plastyczna", href: "/pracownie/plastyczna" },
@@ -14,27 +16,24 @@ const navItem = [
   { label: "Rewalidacja", href: "/pracownie/rewalidacja" },
 ];
 
-export default function layoutPracownie({
+export default function LayoutPracownie({
   children,
-}: Readonly<{ children: ReactNode }>) {
+}: Readonly<{ children: ReactNode }>) {  
+  const pathname = usePathname();
+
   return (
-    <div className="main container">
+    <div className="main container" id="pracowni">
       <aside className="main__left-side">
-        <div className="main__img main__img--logo" />
-        <div className="main__img main__img--1" />
-        <div className="main__img main__img--2" />
-        <div className="main__img main__img--3" />
-        <div className="main__img main__img--4" />
-        <div className="main__img main__img--5" />
-        <div className="main__img main__img--6" />
-      </aside>
-      <div className="main__content">
-        <nav className="nav" id="nav--pracowni">
+        <nav className="nav">
           <ul className="nav__list">
             {navItem.map((item) => {
+              const isActive = pathname === item.href;
+
               return (
                 <li className="nav-item" key={item.label}>
-                  <Link href={item.href} className="nav-link">
+                  <Link 
+                    href={item.href} 
+                    className={isActive ? `nav-link nav-link-hover` : `nav-link`}>
                     {item.label}
                   </Link>
                 </li>
@@ -42,7 +41,8 @@ export default function layoutPracownie({
             })}
           </ul>
         </nav>
-
+      </aside>
+      <div className="main__content">
         <div className="pracowni-container">{children}</div>
       </div>
     </div>
