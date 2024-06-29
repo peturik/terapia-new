@@ -7,6 +7,7 @@
 
 * {
   transition: 0.3s;
+  box-sizing: border-box;
 }
 
 html {
@@ -17,7 +18,7 @@ body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   background-color: var(--main-color-3);
-  color: var(--main-color-3);
+  color: var(--main-color-1);
 }
 .container {
   max-width: 300px;
@@ -67,19 +68,6 @@ body {
   border: solid var(--main-color-1) 1px;
 }
 
-#pracowni .nav__list {
-  flex-direction: column;
-}
-
-#pracowni .nav-link {
-  padding: 25px;
-  font-size: 36px;
-}
-
-#pracowni .main__left-side {
-  width: 300px;
-}
-
 .header__menu {
   display: flex;
   align-items: center;
@@ -108,7 +96,7 @@ body {
 }
 
 .main__left-side {
-  width: 500px;
+  flex-basis: 500px;
   background-color: var(--main-color-1);
   min-height: inherit;
   border-radius: 2% 0 0 2%;
@@ -180,7 +168,8 @@ body {
 .main__content {
   background-color: var(--main-color-2);
   border-radius: 0 2% 2% 0;
-  flex-grow: 1;
+  flex-basis: auto;
+  width: auto;
   padding: 10px 50px;
   min-height: 1000px;
   position: relative;
@@ -236,7 +225,7 @@ body {
 
   ul,
   p {
-    color: var(--main-color-3);
+    color: var(--main-color-1);
     letter-spacing: 1px;
     font-weight: 500;
   }
@@ -290,31 +279,42 @@ body {
 }
 
 .site-about p {
-  color: var(--main-color-1) !important;
+  color: var(--main-color-3) !important;
+}
+
+
+#pracowni .nav__list {
+  flex-direction: column;
+}
+
+#pracowni .nav-link {
+  padding: 25px;
+  font-size: 36px;
 }
 
 .pracowni-container {
-  position: relative;
+  max-width: 1200px;
 }
 
-.pracownia {
-  /* opacity: 0; */
-  pointer-events: none;
-  position: absolute;
-  top: 0;
+.pracowni__container-img {
+  margin: 20px 0;
+  height: 300px;
 }
 
 .pracownia__img {
-  max-height: 600px;
+  height: inherit;
+  object-fit: contain;
+  object-position: left;
 }
 
-.pracownia:target {
-  pointer-events: all;
-  opacity: 1;
+.pracownia__img--left {
+  float: left;
+  margin-right: 15px;
 }
 
-.wsparczia-img {
-  width: inherit;
+.pracownia__img--right {
+  float: right;
+  margin-left: 15px;
 }
 
 .footer {
@@ -339,6 +339,7 @@ body {
 
   .main__content {
     min-height: 1500px;
+    width: inherit;
   }
 
   .main__img--1 {
