@@ -33,7 +33,11 @@ export const Header = () => {
 
               return (
                 <li className="nav-item" key={link.label}>
-                  <Link href={link.href} className="nav-link">
+                  <Link
+                    href={link.href}
+                    className="nav-link"
+                    onClick={() => isMenuOpen && toggleMenu()}
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -42,7 +46,7 @@ export const Header = () => {
           </ul>
         </nav>
         <button className={styles.menuButton} onClick={toggleMenu}>
-          ☰
+          <span className="text-4xl font-bold">☰</span>
         </button>
         {isMenuOpen && (
           <div className={styles.backdrop} onClick={toggleMenu}></div>
